@@ -1,0 +1,23 @@
+Câu 1: Vì sao chọn kiến trúc là bước sống còn?
+
+Kiến trúc là tập hợp các quyết định lớn về thành phần, cách chúng tương tác và các nguyên tắc ràng buộc hệ thống. Đây là loại quyết định khó và tốn kém nhất để thay đổi về sau, vì sửa kiến trúc nghĩa là gần như xây lại hệ thống. Kiến trúc tốt không làm phần mềm chạy nhanh hơn ngay lập tức, nhưng giúp dự án sống sót qua thời gian: mở rộng được khi người dùng tăng từ 100 lên 1 triệu, sửa một tính năng mà không phải đập đi xây lại, và một bộ phận hỏng không làm sập toàn bộ ứng dụng. Với startup, chọn sai có hai rủi ro: quá đơn giản thì hệ thống nghẹt khi tăng trưởng, quá phức tạp thì tốn thời gian, tiền bạc và trễ ra mắt thị trường. Lời khuyên của tư vấn viên: không có kiến trúc "tốt nhất", chỉ có kiến trúc phù hợp nhất (trade-off). Startup nên bắt đầu đơn giản (Monolithic có phân tầng, tách module rõ ràng) để ra mắt nhanh, rồi tách dần sang Microservices khi hệ thống đủ lớn.
+
+Câu 2: Các loại kiến trúc phổ biến
+
+Monolithic (đơn khối): UI, logic, database đóng gói vào một đơn vị. Dễ phát triển và deploy lúc đầu, nhưng khi lớn dễ thành "Big Ball of Mud", một lỗi nhỏ có thể làm sập cả hệ thống.
+Layered (phân tầng): Chia thành các lớp có trách nhiệm riêng: Presentation, Business Logic, Data Access. Dễ hiểu, tách biệt trách nhiệm.
+Microservices: Chia thành nhiều dịch vụ nhỏ độc lập, mỗi dịch vụ một chức năng nghiệp vụ, giao tiếp qua REST API hoặc Message Queue. Mở rộng và triển khai độc lập, nhưng vận hành, dữ liệu phân tán và bảo mật phức tạp hơn.
+
+Câu 3: Các thuộc tính chất lượng (Quality Attributes)
+
+Scalability (khả năng mở rộng): Hệ thống chịu được tải tăng mạnh (ví dụ 100 lên 1 triệu người dùng) bằng cách thêm tài nguyên mà không phải thiết kế lại.
+Availability (tính sẵn sàng): Tỷ lệ thời gian hệ thống hoạt động bình thường, ví dụ 99.99%.
+Reliability (tính tin cậy): Khả năng thực hiện đúng chức năng trong điều kiện quy định, cho kết quả chính xác.
+Maintainability (khả năng bảo trì): Mức độ dễ dàng sửa lỗi, nâng cấp, thêm tính năng mà không ảnh hưởng phần khác.
+Security (tính bảo mật): Bảo vệ dữ liệu và ngăn chặn truy cập, tấn công trái phép.
+Deployability (tính triển khai): Đưa code mới lên môi trường thật dễ dàng, nhanh và an toàn.
+Resilience (khả năng chịu lỗi): Khi một bộ phận hỏng, phần còn lại vẫn hoạt động, hệ thống phục hồi nhanh.
+
+Kết luận: Kiến trúc tốt và sự thành công của dự án
+
+Các thuộc tính chất lượng là thước đo để đánh giá và lựa chọn kiến trúc, và chúng thường đánh đổi lẫn nhau (ví dụ Microservices tăng Scalability, Deployability nhưng làm tăng độ phức tạp vận hành). Kiến trúc tốt là kiến trúc cân bằng đúng các thuộc tính mà nghiệp vụ cần nhất tại từng giai đoạn. Nhờ đó sản phẩm ra mắt kịp thời, vận hành ổn định khi tăng trưởng, dễ thay đổi theo thị trường và tiết kiệm chi phí dài hạn, đó chính là nền tảng cho sự thành công của dự án.
